@@ -573,4 +573,588 @@ Tulisan B aja
 <img style="width: 250px; height: 250px" src="gambar.jpg" alt="Logo HTML" />
 ```
 
+## Picture
+
+- Selain untuk menampilkan gambar menggunakan tag `img`, di HTML juga bisa menggunakan tag `picture` untuk menampilkan gambar
+- Salah satu keuntungan menggunakan tag `picture` adalah, kita bisa menggunakan beberapa lokasi gambar, dan bisa diatur sesuai dengan ukuran layar misalnya. Jadi ketika di layar besar, kita bisa kirim gambar dengan ukuran besar, dan ketika di layar kecil, kita bisa kirim gambar yang ukuran kecil
+
+**Picture Content**
+
+- Tag `img` adalah void element, sedangkan Tag `picture` bukan
+- Di dalam tag `picture`, kita bisa menambahkan tag source yang berisi lokasi gambar, dan tag `img` sebagai default gambar ketika semua kondisi tag source tidak terpenuhi
+
+**Kode Picture:**
+
+```html
+<picture>
+  <source media="(max-width: 300px)" srcset="tayo.jpg" alt="Tayo" />
+  <img src="gambar.jpg" alt="Logo HTML" style="width: 200px; height: 200px" />
+</picture>
+```
+
+## Computer Code
+
+- Sebagai programmer, kadang kita sering membuat web artikel tentang kode program
+- Pada kasus seperti ini, ketika kita membuat kode program di HTML menggunakan paragraph, maka akan menyulitkan, karena semua enter dan spasi akan dinormalkan oleh HTML
+- Kadang kita ingin menampilkan kodenya apa adanya
+
+**Tag Pre**
+
+- Untuk menampilkan tulisan di dalam HTML apa adanya, kita bisa menggunakan tag `pre`
+- Namun perlu diingat, kode HTML tetap tidak akan ditampilkan, jadi kita harus menggunakan HTML Entities
+
+**Kode Pre:**
+
+```html
+<pre>
+  public static void main(String[] args) {
+    System.out.println("HELLO WORLD");
+  }
+</pre>
+```
+
+## Emoji
+
+- Dalam website, kita sering sekali melihat emoji pada tulisan
+- Bagaimana cara membuat emoji di HTML?
+- HTML sudah memiliki standar untuk membuat emoji, mirip dengan HTML Entities, kita juga bisa menggunakan kode untuk membuat Emoji
+- Kita bisa melihat daftar emoji yang dapat kita gunakan, dan kodenya disini :
+  *https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm*
+
+**Kode Emoji:**
+
+```html
+<h3>Hello &#1F923; &#x1F633</h3>
+```
+
+## Head
+
+- Selain tag `body`, di HTML juga terdapat tag `head`
+- Tag head digunakan untuk menambah informasi yang tidak dimunculkan di halaman web
+- Head biasanya digunakan untuk menambah informasi seperti CSS atau JavaScript
+- Head juga biasa digunakan untuk menambahkan metadata (informasi tambahan) untuk halaman HTML, biasanya digunakan oleh Search Engine misalnya
+
+**Title**
+
+- Di dalam Head, kita juga bisa menambahkan tag `title`, yang digunakan untuk mengubah judul halaman di Web Browser
+
+**Kode Title:**
+
+```html
+<head>
+  <title>Belajar HTML</title>
+</head>
+```
+
+## Favicon
+
+- Saat kita membuka website seperti Google, Facebook atau yang lainnya, biasanya pada bagian tab Web Browser, terdapat logo perusahaannya
+- Bagaimana cara membuatnya? Itu adalah fitur Favicon di HTML
+
+**Tag Link**
+
+- Untuk membuat favicon, kita bisa menggunakan tag link pada bagian head
+- dimana dalam link kita perlu menggunakan atribut `rel=”icon”` dan href menuju lokasi gambar icon
+- Gambar icon bisa file berupa ico, png, jpg, svg atau gif
+
+  ![Icon Favicon](img/favicon/favicon.png)
+
+**Kode Favicon:**
+
+```html
+<head>
+  <title>Belajar Favicon</title>
+  <link rel="icon" href="gambar.jpg" />
+</head>
+```
+
+## Block dan Inline
+
+- Di dalam HTML, semua element memiliki nilai display, tergantung dari jenis element yang digunakan
+- Secara garis besar, ada dua nilai untuk display, block dan inline
+
+**Block**
+
+- Element yang memiliki nilai display block, selalu dimulai dengan baris baru.
+- Web browser secara otomatis menambahkan jarak / margin sebelum dan setelah element
+- Dan element dengan nilai display block, selalu mengambil ukuran penuh yang tersedia, yag artinya dia akan meregang dari kiri dan kanan
+- Contoh tag yang menggunakan nilai display block adalah :
+  `h1-h6`, `p`, `header`, `body`, `ul`, `li`, `ol`, `table`, `form`, dan lain-lain
+
+**Inline**
+
+- Sedangkan dalam display inline, element tidak dimulai dengan baris baru
+- Selain itu dalam display inline, element hanya menggunakan ukuran seperlunya saja
+- Contoh tag yang menggunakan nilai display inline :
+  `a`, `b`, `i`, `em`, `button`, `strong`, `input`, dan lain-lain
+
+**Div**
+
+- Div adalah salah satu tag di HTML yang memiliki nilai display block
+- Div biasanya digunakan sebagai container (wadah) untuk beberapa element HTML
+- Div banyak digunakan ketika kita ingin membedakan bagian-bagian dalam element HTML, misal ada bagian menu, content, footer, header dan lain-lain
+- Biasanya semua itu dibungkus dalam Div
+
+```html
+<body>
+  <!-- menu -->
+  <div id="menu" style="background-color: lightgreen">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <!-- blog -->
+  <div id="blog">
+    <article>
+      <h2>Judul Blog</h2>
+      <p>Isi Blog</p>
+    </article>
+  </div>
+
+  <!-- footer -->
+  <div id="footer">
+    <p>Copyright 2023</p>
+  </div>
+</body>
+```
+
+**Span**
+
+- Jika Div menggunakan nilai display block, ada lagi tag span, yang menggunakan nilai display inline
+- Span biasa digunakan pada kasus kita ingin menggunakan display inline, misal kita mau membuat tulisan "Hello World", namun tiap kata berbeda warna
+- Hal itu tidak bisa dilakukan jika menggunakan `p`, karena `p` akan mengubah seluruh warna tulisan
+- Kita bisa gunakan `span` di tiap kata, agar bisa menambah style di tiap `span`
+
+**Kode Span:**
+
+```html
+<h1>
+  <span style="color: lightblue">Hello</span>
+  <span style="color: purple">World</span>
+</h1>
+```
+
+## Video
+
+- Selain gambar, HTML juga mendukung untuk menampilkan video di halaman web yang kita buat
+- Namun perlu diperhatikan, tidak semua jenis video bisa dijalankan oleh Web Browser
+- Biasanya format video yang banyak digunakan adalah `mp4`, `webm` atau `ogg`
+- Untuk menampilkan video, kita bisa menggunakan tag `video`
+
+**Video Attribute**
+
+- Tag `video` memiliki banyak atribut, seperti
+- `width` untuk ukuran lebar video
+- `height` untuk ukuran tinggi video
+- `controls` untuk menampilkan kontrol video
+- `autoplay` agar video otomatis berjalan
+- Untuk menampilkan video, kita bisa gunakan tag `source`
+- Sama seperti di picture, kisa bisa menambahkan beberapa source
+
+**Kode Video:**
+
+```html
+<video width="1000px" height="600px" controls>
+  <source src="video.mp4" />
+</video>
+```
+
+## Audio
+
+- Selain gambar, video, HTML juga mendukung untuk audio
+- Untuk audio, kita bisa menggunakan tag `audio`
+- Cara penggunaannya mirip dengan tag `video`, di dalamnya bisa kita tambahkan tag `source`
+
+**Kode Audio:**
+
+```html
+<audio controls>
+  <source src="audio.mp3" />
+</audio>
+```
+
+## HTML 5
+
+- Tahun 2008, HTML sudah rilis versi 5
+- Banyak perubahan yang terjadi di HTML 5 dari versi sebelumnya HTML 4, terutama dari interaksi yang lebih kaya (perlu menggunakan JavaScript)
+- Dahulu, ketika ingin membuat web yang interaktif, kebanyakan orang menggunakan Adobe Flash, namun sekarang cukup menggunakan HTML 5, CSS dan JavaScript sudah bisa dilakukan
+- HTML 5 membawa struktur baru pada kerangka pembuatan halaman HTML
+
+**Kode Struktur HTML 5:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar HTML 5</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>
+```
+
+## Inline Frame
+
+- Pada saat membuat halaman web, kadang kita ingin menampilkan halaman web lain pada halaman tersebut
+- Pada kasus seperti itu, kita bisa menggunakan Inline Frame
+- Inline Frame di HTML bisa menggunakan tag `iframe`
+- Inline Frame sangat banyak digunakan oleh banyak orang, contoh nya di Youtube menggunakan Inline Frame ketika kita mau menampilkan video Youtube di website kita
+
+**Youtube Inline Frame**
+
+![Youtube Programmer Zaman Now](img/inline-frame/iframe-pzn.png)
+
+**Kode Iframe:**
+
+```html
+<iframe src="color.html" frameborder="0" height="500px" width="1000px"></iframe>
+```
+
+## Table
+
+- Saat membuat halaman Web, kita sering membuat tabel
+- Di HTML, kita kita juga bisa membuat tabel
+- Ada banyak sekali tag yang digunakan untuk membuat table
+
+**Table Tag**
+
+- Tag `table`, digunakan untuk membuat tabel
+- Tag `tr` untuk membuat row / baris
+- Tag `th` untuk membuat kolom header table
+- Tag `td` untuk membuat kolom isi table
+- Tag `caption` untuk keterangan table
+- Tag `thead`, untuk grup header table
+- Tag `tbody`, untuk grup isi table
+- Tag `tfoot`, untuk grup footer table
+
+**Kode Table:**
+
+```html
+<h1>Belajar Membuat Table</h1>
+
+<table style="border: 1px solid black;">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>Hobi</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Otong Surotong</td>
+      <td>otong@gmail.com</td>
+      <td>Main Game</td>
+    </tr>
+    <tr>
+      <td>Ucup Surucup</td>
+      <td>ucup@gmail.com</td>
+      <td>Olahraga</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td></td>
+      <td>Total Nama</td>
+      <td>2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+**Colgroup**
+
+- Kadang kita ingin memberi style untuk kolom, jika dilakukan satu-satu, maka akan menyulitkan
+- Kita bisa menggunakan tag `colgroup` untuk membuat group kolom, dan tag `col` untuk tiap kolom nya
+- Jika kita ingin menambahkan style ke lebih dari satu kolom dengan style yang sama, kita bisa gunakan atribut `span=jumlah` pada tag `col`
+
+**Kode Colgroup:**
+
+```html
+<table>
+  <colgroup>
+    <col span="2" style="background-color: lightgreen" />
+    <col style="background-colo: aqua;" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>Hobi</th>
+    </tr>
+  </thead>
+</table>
+```
+
+**Colspan dan Rowspan**
+
+- Saat kita membuat tabel, kadang kita ingin menggabungkan beberapa kolom atau beberapa baris, sehingga terlihat menjadi satu kolom
+- Pada kasus itu, kita bisa menggunakan atribut `colspan` untuk menggabungkan beberapa kolom dalam satu baris yang sama
+- Atau menggunakan atribut `rowspan` untuk menggabungkan beberapa kolom di baris yang berbeda
+
+**Kode Colspan:**
+
+```html
+<thead>
+  <tr>
+    <th colspan="2">Nama</th>
+    <th>Hobi</th>
+  </tr>
+</thead>
+```
+
+**Kode Rowspan:**
+
+```html
+<tr>
+  <td rowspan="2">Total</td>
+  <td>Total Nama</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>Rata rata email</td>
+  <td>2</td>
+</tr>
+```
+
+## Semantic
+
+- Semantic element adalah element yang memiliki arti
+- Sebelum HTML 5, setiap kita ingin membuat layout di HTML, kita biasanya hanya menggunakan tag `div` dan `span`, hal ini kadang tidak memiliki arti
+- Di HTML 5, terdapat tag-tag seperti `div` dan `span`, namun lebih memiliki arti
+- Oleh karena itu, kita direkomendasikan menggunakan semantic tag agar kode HTML yang kita buat lebih mudah untuk dibaca dan dimengerti
+
+**Semantic Tag**
+
+- Tag `article`, untuk konten artikel
+- Tag `aside`, untuk bagian disamping konten, misal sidebar
+- Tag `figure`, untuk konten ilustrasi, diagram, foto, dan lain-lain
+- Tag `figurecaption`, untuk keterangan tag figure
+- Tag `footer`, untuk bagian footer dokumen
+- Tag `header`, untuk bagian header dokumen
+- Tag `main`, untuk konten utama dokumen
+- Tag `mark`, untuk bagian yang ditandai atau highlight
+- Tag `nav`, untuk bagian navigasi link
+- Tag `section`, untuk section di dokumen
+- Tag `details`, untuk bagian yang lebih detail yang bisa pengguna lihat
+- Tag `summary`, untuk heading untuk tag details
+- Tag `time`, untuk konten waktu/tanggal
+
+**Kode Semantic Tag:**
+
+```html
+<body>
+  <header>
+    <h1>Judul Halaman</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#artikel">Artikel</a></li>
+      <li><a href="#kontak">Kontak Kami</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <article>
+      <h2>Belajar HTML</h2>
+      <p>Deskripsi Belajar HTML</p>
+    </article>
+    <article>
+      <h2>Belajar CSS</h2>
+      <p>Deskripsi Belajar HTML</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Powered by Programmer Zaman Now <time datetime="2023">2023</time></p>
+  </footer>
+</body>
+```
+
+## Layout
+
+- Salah satu kegunaan ketika menggunakan Semantic Element adalah, mudah membuat layout
+- Hal ini karena kita tahu tiap bagian tag memiliki arti
+- Kali ini kita akan menggunakan sedikit CSS pada tag `style` untuk membuat layout
+- Misal kita akan gunakan HTML pada materi Semantic
+
+**Kode CSS Layout:**
+
+```css
+header {
+  background-color: gray;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+article {
+  padding: 20px;
+  width: 100%;
+  background-color: #1f1f1f;
+}
+
+footer {
+  background-color: gray;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  background-color: lightgreen;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: green;
+}
+```
+
+## Responsive
+
+- Kita tahu bahwa ukuran layar komputer itu bisa berbeda-beda, termasuk smartphone
+- Saat ini, web tidak hanya diakses oleh komputer, bisa juga melalui smartphone, tablet bahkan tv
+- Artinya ukuran layar pasti akan selalu berubah-ubah
+- Responsive adalah kemampuan beradaptasi terhadap perubahan ukuran layar
+- Web sekarang biasanya selalu implementasi responsive, agar tidak perlu membuat banyak web untuk layar yang berbeda
+
+**Viewport**
+
+- Sebelumnya di materi HTML 5, kita melakukan setting viewport dengan `initial-scale=1.0`
+- Hal itu dilakukan agar ketika web kita dibuka di mobile (smartphone atau tablet), ukuran web kita mengikuti ukuran layar dari device nya
+- Ingat, tiap handphone walaupun ukuran layar misal 6inch, tapi secara pixel bisa berbeda, oleh karena itu ketika kita buat website dengan ukuran `100px` misal, di handphone dengan kepadatan pixel yang besar, bisa jadi ukurannya sangat kecil, dan pada handphone dengan kepadatan pixel rendah, bisa jadi sangat besar
+- Pengatura viewport bisa mengubah
+
+**Hasil Pengaturan Viewport:**
+
+![Hasil Viewport](img/responsive/hasil-viewport.png)
+
+**Responsive Element Size**
+
+- Saat kita membuat web, kadang kita menentukan ukuran element, misal gambar, table, div dan lain-lain
+- Jika ingin response, kita bisa menggunakan % sebagai ukuran element nya, misal ketika kita gunakan nilai 100%, artinya ukurannya akan 100% dari viewport yang tampil di Web Browser, ketika kita mengubah ukuran Web Browser nya, secara otomatis element akan ikut berubah ukurannya
+
+**Kode Responsive Size:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Responsive</title>
+  </head>
+
+  <body>
+    <h1>Belajar Responsive</h1>
+    <p>Belajar Responsive</p>
+    <img
+      style="width: 100%; height: auto;"
+      src="gambar.jpg"
+      alt="Alternative Gambar"
+    />
+  </body>
+</html>
+```
+
+**Responsive Text Size**
+
+- Responsive dengan `%`, hanya bisa dilakukan di element
+- Bagaimana pada kasus di teks misalnya? Kadang kita ingin membesarkan teks secara otomatis pada layar besar, dan mengecilkan pada ukuran layar kecil
+- Pada kasus seperti ini, kita bisa menggunakan unit vm (viewport width) untuk ukuran font
+
+**Kode Responsive Text Size:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Responsive</title>
+  </head>
+
+  <body>
+    <h1 style="font-size: 5vw;">Belajar Responsive</h1>
+    <p style="font-size: 2vw;">Belajar Responsive</p>
+    <img
+      style="width: 100%; height: auto;"
+      src="gambar.jpg"
+      alt="Alternative Gambar"
+    />
+  </body>
+</html>
+```
+
+**Media Query**
+
+- Pada kasus seperti gambar, mungkin ketika layar terlalu besar, dan ukuran gambar kecil, secara otomatis gambar akan pecah, oleh karena itu biasanya pada kasus seperti ini, kita akan menyediakan beberapa jenis ukuran gambar
+- Dan untuk melakukannya, biasanya kita akan menggunakan CSS Media Query, seperti yang pernah kita praktekan di materi Picture
+
+## ID
+
+- Di semua tag HTML, terdapat atribut bernama `id`
+- id merupakan atribut yang digunakan untuk menambahkan id ke element HTML yang kita buat
+- id itu harus unik di satu halaman HTML, artinya tidak boleh ada yang sama
+- id itu mungkin tidak terlalu berguna ketika kita hanya belajar HTML, namun ketika kita belajar CSS dan JavaScript, maka id sangat berguna
+
+**Keuntungan Menggunakan ID**
+
+- Dengan menggunakan ID, kita bisa mengambil element menggunakan JavaScript lebih mudah
+- Dengan menggunakan ID, kita bisa mengubah gaya dengan CSS lebih mudah, apalagi jika terdapat tag yang sama. Misal terdapat 5 tag div, kita hanya ingin mengubah gaya untuk 1 div, kita bisa tambahkan id di div tersebut, dan menggunakan id untuk mengubah gaya pada div tersebut menggunakan CSS
+
+**Kode ID:**
+
+```html
+<html>
+  <head>
+    <title>Belajar ID</title>
+    <style>
+      #top {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="top">Ini adalah Top</h1>
+    <h1 id="bottom">Ini adalah Bottom</h1>
+  </body>
+</html>
+```
+
+## Tag lainnya
+
+- *https://developer.mozilla.org/en-US/docs/Web/HTML/Element*
+
 > Source Material from [Programmer Zaman Now](https://programmerzamannow)
