@@ -402,4 +402,175 @@ Tulisan B aja
 <h1 style="background-color: hsl(120, 60%, 52%);">Tetap Semangant Yachh</h1>
 ```
 
+## List
+
+**Unordered List**
+
+- Untuk membuat daftar tulisan, kita bisa menggunakan tag `ul` di HTML
+- Tiap daftar isi nya, kita bisa menggunakan tag `li`
+
+**Kode Unordered List:**
+
+```html
+<h3>Daftar Kegiatan</h3>
+
+<ul>
+  <li>Main Game</li>
+  <li>Olahraga</li>
+  <li>Makan</li>
+  <li>Tidur</li>
+</ul>
+```
+
+**Ordered List**
+
+- Jika kita ingin membuat daftar yang berurut (memiliki angka), kita bisa mengganti tag `ul` menjadi `ol`
+- Untuk daftar isi nya tetap sama menggunakan tag `li`
+
+**Kode Ordered List:**
+
+```html
+<h2>Tahapan Belajar HTML</h2>
+
+<ol>
+  <li>Mengenal Web</li>
+  <li>Mengintall Aplikasi Editor Code</li>
+  <li>Mempelajari Tag HTML</li>
+  <li>Menghosting Web</li>
+</ol>
+```
+
+**Ordered List Type**
+
+- Pada kasus ketika kita menggunakan daftar yang berurut (`ol`), kita bisa mengubah format daftar nya, defaultnya menggunakan angka (dimulai dari 1).
+- Kita bisa menambahkan attribute type di ol dengan nilai :
+- `type=”1”`, artinya daftar isi akan menggunakan angka (ini adalah defaultnya)
+- `type=”A”`, artinya daftar isi akan menggunakan huruf kapital
+- `type=”a”`, artinya daftar isi akan menggunakan huruf kecil
+- `type=”I”`, artinya daftar isi akan menggunakan angka romawi kapital
+- `type=”i”`, artinya daftar isi akan menggunakan angka romawi kecil
+
+**Kode Ordered List Type:**
+
+```html
+<ol type="a">
+  <li>Mengenal Web</li>
+  <li>Mengintall Aplikasi Editor Code</li>
+  <li>Mempelajari Tag HTML</li>
+  <li>Menghosting Web</li>
+</ol>
+```
+
+## Link
+
+- Saat membuat Web, biasanya kita akan membuat banyak sekali halaman HTML
+- Untuk berpindah dari satu halaman ke halaman lain, kita biasanya jarang melakukannya secara manual dengan cara mengetikkannya di search bar Web Browser
+- HTML memiliki fitur Link (Tautan), dimana kita bisa meng-klik Link tersebut, dan berpindah ke halaman HTML lain
+- Link tidak harus dalam bentuk Text, Link juga bisa dalam bentuk Gambar misalnya (yang akan kita bahas di materi Image)
+
+**Tag a**
+
+- Untuk membuat Link di HTML, kita bisa menggunakan tag `a`
+- Isi konten tag `a` adalah isi dari tampilan Link, bisa Text atau yang lainnya
+- Tag `a` memiliki attribute `href`, yang berisi lokasi tujuan Link tersebut
+- Tag a juga memiliki attribute target, yang digunakan sebagai target jendela Web Browser, kita bisa gunakan nilai :
+
+  `target=”_self”`, artinya halaman akan ditampilkan di halaman yang sama, ini adalah bawaan default
+  `target=”_blank”`, artinya halaman akan ditampilkan di jendela baru di Browser
+
+- Tag `a` juga memiliki attribute `title`, untuk menuliskan judul yang keluar ketika mouse berada di atas Link tersebut
+
+**Kode Link:**
+
+```html
+<h1>Belajar Link</h1>
+
+<ul>
+  <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+  <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+  <li><a href="https://youtube.com" target="_blank">Youtube</a></li>
+</ul>
+```
+
+**Abosolute URL**
+
+- Saat kita menulis halaman tujuan dari href di Link, kita bisa menggunakan absolute URL
+- Absolute URL merupakan alamat lengkap sebuah tujuan Link
+- Dalam absolute URL, kita wajib menuliskan seluruh detail domain dan halaman yang dituju, misal
+- https://youtube.com
+- Kelebihan menggunakan Absolute URL adalah, kita bisa membuat Link menuju domain yang berbeda dengan website yang kita buat
+
+**Relative URL**
+
+- Relative URL adalah lokasi href dimana tetap menggunakan domain website saat ini
+- Relative URL memiliki dua format, bisa diawali dengan `/`, atau tidak diawali dengan `/`
+- Misal sekarang kita berada di halaman http://127.0.0.1/belajar-link/index.html , lalu kita memiliki link sebagai berikut :
+- `hello.html`, artinya akan menuju ke http://127.0.0.1/belajar-link/hello.html
+- `/hello.html`, artinya akan menuju ke http://127.0.0.1/hello.html
+
+**Kode Relative URL:**
+
+```html
+<h1>Belajar Relative URL</h1>
+<ul>
+  <li><a href="hello.html">Hello HTML</a></li>
+  <li><a href="belajar/web.html">Belajar HTML</a></li>
+</ul>
+```
+
+**Bookmark**
+
+- Pada kasus halaman web yang sangat panjang, ada bagusnya kita menggunakan Bookmark
+- Bookmark adalah link yang bisa digunakan untuk menampilkan HTML element dengan `id` tertentu
+- Bookmark menggunakan `#` pada href, misal jika kita menggunakan `index.html#about`, artinya ketika membuka halaman `index.html`, maka Web Browser akan otomatis menampilkan pada posisi HTML Element dengan `id about`
+- Jika kita ingin membuat link di halaman HTML itu sendiri, kita bisa langsung buat Link dengan href langsung berisi #bookmark nya
+
+**Kode Bookmark di Halaman Sendiri:**
+
+```html
+<h1>Daftar Isi</h1>
+<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#profile">Profile</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+<p>Belajar HTML sangat penting jika kita ingin membuat Web</p>
+```
+
+## Image
+
+- Image / gambar bisa digunakan untuk memperindah tampilan website yang kita buat
+- HTML mendukung untuk menampilkan gambar dengan tag `img`
+- Hampir semua format gambar yang didukung oleh Web Browser, bisa ditampilkan di halaman web HTML
+
+**Image Attribute**
+
+- Tag img adalah void element, jadi tidak memiliki konten
+- Terdapat beberapa atribut yang bisa kita gunakan dalam tag `img`
+- Attribute `src` yang digunakan untuk menentukan lokasi gambar yang mau ditampilkan, bisa menggunakan Absolute URL atau Relative URL
+- Attribute alt yang digunakan sebagai representasi text atau tulisan untuk gambar
+
+**Kode Image:**
+
+```html
+<img src="gambar.jpg" alt="Logo HTML" />
+```
+
+**Image Size**
+
+- Secara bawaan default, ukuran gambar akan selalu ditampilkan sesuai aslinya
+- Kadang-kadang, kita ingin mengubah ukuran gambarnya
+- Untuk melakukan itu, kita perlu batuan CSS
+- Kita bisa gunakan attribute CSS :
+- width untuk mengubah ukuran lebar
+- height untuk mengubah ukuran tinggi
+- Kita bisa gunakan satuan px (pixel), atau % untuk persentase dari ukuran asli
+
+**Kode Image Size:**
+
+```html
+<img style="width: 250px; height: 250px" src="gambar.jpg" alt="Logo HTML" />
+```
+
 > Source Material from [Programmer Zaman Now](https://programmerzamannow)
