@@ -184,7 +184,7 @@
   `belajar-html.html`, `halaman-login.html`, `belajar_html.html`
 - Jika butuh membuat folder di gunakan aturan yang sama
 
-**Heading**
+## Heading
 
 - Saat kita membuat dokumen atau buku, biasanya terdapat Heading
 - Heading adalah kata-kata yang mendeskripsikan isi dari tulisan yang kita buat.
